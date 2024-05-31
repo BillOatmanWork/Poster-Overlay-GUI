@@ -16,6 +16,12 @@
     <None Remove="OverlayImages\4K with DV.png" />
     <None Remove="OverlayImages\4K with HDR.png" />
     <None Remove="OverlayImages\4K-HDR with Imax.png" />
+    <None Remove="OverlayImages\1080p with DV and Imax.png" />
+    <None Remove="OverlayImages\1080p with DV.png" />
+    <None Remove="OverlayImages\1080p with HDR.png" />
+    <None Remove="OverlayImages\1080p with HDR and Imax.png" />
+    <None Remove="OverlayImages\1080p with Imax.png" />
+    <None Remove="OverlayImages\1080p.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -32,6 +38,24 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="OverlayImages\4K-HDR with Imax.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OverlayImages\1080p with DV and Imax.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OverlayImages\1080p with DV.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OverlayImages\1080p with HDR.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OverlayImages\1080p with HDR and Imax.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OverlayImages\1080p with Imax.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OverlayImages\1080p.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <Content Include="PosterOverlay.ico" />
