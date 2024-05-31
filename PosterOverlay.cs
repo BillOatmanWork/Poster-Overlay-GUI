@@ -193,7 +193,7 @@ namespace PosterOverlay
                     overlayFilename = @"OverlayImages\1080p with HDR and Imax.png";
                     break;
                 case 9:
-                    overlayFilename = @"OverlayImages\1080p with IMAX.png";
+                    overlayFilename = @"OverlayImages\1080p with Imax.png";
                     break;
                 case 10:
                     overlayFilename = @"OverlayImages\1080p.png";
