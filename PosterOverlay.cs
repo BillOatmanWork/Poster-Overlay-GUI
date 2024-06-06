@@ -43,7 +43,8 @@ namespace PosterOverlay
                 "4K with DV",
                 "4K with HDR",
                 "4K with HDR and IMAX",
-                "4K with no HDR",
+                "4K with IMAX",
+                "4K",
                 "1080p with DV and IMAX",
                 "1080p with DV",
                 "1080p with HDR",
@@ -178,24 +179,27 @@ namespace PosterOverlay
                     overlayFilename = @"OverlayImages\4K-HDR with Imax.png";
                     break;
                 case 4:
-                    overlayFilename = @"OverlayImages\4K no HDR.png";
+                    overlayFilename = @"OverlayImages\4K with Imax.png";
                     break;
                 case 5:
-                    overlayFilename = @"OverlayImages\1080p with DV and Imax.png";
+                    overlayFilename = @"OverlayImages\4K.png";
                     break;
                 case 6:
-                    overlayFilename = @"OverlayImages\1080p with DV.png";
+                    overlayFilename = @"OverlayImages\1080p with DV and Imax.png";
                     break;
                 case 7:
-                    overlayFilename = @"OverlayImages\1080p with HDR.png";
+                    overlayFilename = @"OverlayImages\1080p with DV.png";
                     break;
                 case 8:
-                    overlayFilename = @"OverlayImages\1080p with HDR and Imax.png";
+                    overlayFilename = @"OverlayImages\1080p with HDR.png";
                     break;
                 case 9:
-                    overlayFilename = @"OverlayImages\1080p with Imax.png";
+                    overlayFilename = @"OverlayImages\1080p with HDR and Imax.png";
                     break;
                 case 10:
+                    overlayFilename = @"OverlayImages\1080p with Imax.png";
+                    break;
+                case 11:
                     overlayFilename = @"OverlayImages\1080p.png";
                     break;
             }
