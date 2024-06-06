@@ -1,6 +1,7 @@
 # Poster Overlay GUI
 
-This is a simple Windows Forms application that allows users to add 4K Ultra HD Banners to their movie posters.
+This is a simple Windows Forms application that allows users to add 4K Ultra HD and BluRay Banners to their movie posters with Dolby Vision, IMAX and HDR labels.
+The overlays are tailored to fit the Emby Coverart Plugin.
 
 ## Screenshots
 
@@ -8,7 +9,8 @@ This is a simple Windows Forms application that allows users to add 4K Ultra HD 
 
 ## Features
 
-- Choose from multiple overlay images (4k Ultra HD, with HDR, with DV, With HDR and IMAX and with DV and Imax)
+- Choose from multiple overlay images für UHD (4k Ultra HD, with HDR, with DV, With HDR and IMAX and with DV and Imax)
+- Choose from multiple overlay images für BluRay (BluRay, with HDR, with DV, With HDR and IMAX and with DV and Imax)
 - Preview the combined result
 - Save the resulting image as a new file
 
