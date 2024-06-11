@@ -50,7 +50,8 @@ namespace PosterOverlay
                 "1080p with HDR",
                 "1080p with HDR and IMAX",
                 "1080p with IMAX",
-                "1080p"
+                "1080p",
+				"DTheater"
             });
             cboOverlayImage.Size = new Size(160, 23);
             cboOverlayImage.Location = new Point(193, 17);
@@ -176,7 +177,7 @@ namespace PosterOverlay
                     overlayFilename = @"OverlayImages\4K with HDR.png";
                     break;
                 case 3:
-                    overlayFilename = @"OverlayImages\4K-HDR with Imax.png";
+                    overlayFilename = @"OverlayImages\4K with HDR and Imax.png";
                     break;
                 case 4:
                     overlayFilename = @"OverlayImages\4K with Imax.png";
@@ -201,6 +202,9 @@ namespace PosterOverlay
                     break;
                 case 11:
                     overlayFilename = @"OverlayImages\1080p.png";
+                    break;
+                case 12:
+                    overlayFilename = @"OverlayImages\DTheater.png";
                     break;
             }
             ApplyOverlay(overlayFilename);
