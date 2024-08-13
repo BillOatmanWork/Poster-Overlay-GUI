@@ -52,7 +52,7 @@ namespace PosterOverlay
                 "1080p with HDR",
                 "1080p with HDR and IMAX",
                 "1080p with HDR10+",
-                "1080p with HDR10+ and IMAX"
+                "1080p with HDR10+ and IMAX",
                 "1080p with IMAX",
                 "1080p",
 				"DTheater"
