@@ -5,7 +5,7 @@ Also DTheater Case was added. The overlays are tailored to fit the Emby Coverart
 
 ## Screenshots
 
-![Screenshot 1](Screenshots/Screenshot%201.png)
+![Example](Screenshots/Example.png)
 
 ## Features
 
