@@ -290,7 +290,7 @@ namespace PosterOverlay
             SaveFileDialog saveFileDialog = new SaveFileDialog
             {
                 Filter = "Image Files (*.jpg;*.png)|*.jpg;*.png|All files (*.*)|*.*",
-                DefaultExt = "png"
+                DefaultExt = "jpg"
             };
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
