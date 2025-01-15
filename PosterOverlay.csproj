@@ -27,6 +27,8 @@
 	<None Remove="OverlayImages\1080p with HDR10+ and Imax.png" />
     <None Remove="OverlayImages\1080p with Imax.png" />
     <None Remove="OverlayImages\1080p.png" />
+    <None Remove="OverlayImages\Bluray 3D with IMAX.png" />
+    <None Remove="OverlayImages\Bluray 3D.png" />
 	<None Remove="OverlayImages\DTheater.png" />
   </ItemGroup>
 
@@ -77,6 +79,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="OverlayImages\1080p.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OverlayImages\Bluray 3D with IMAX.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OverlayImages\Bluray 3D.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="OverlayImages\DTheater.png">
