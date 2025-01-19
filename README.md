@@ -9,8 +9,8 @@ Also DTheater Case was added. The overlays are tailored to fit the Emby Coverart
 
 ## Features
 
-- Choose from multiple overlay images für UHD (4k Ultra HD, with HDR, with HDR10+, with DV, With HDR and IMAX, with HDR10+ and IMAX and with DV and Imax)
-- Choose from multiple overlay images für BluRay (BluRay, with HDR, with HDR10+, with DV, With HDR and IMAX, with HDR10+ and IMAX and with DV and Imax)
+- Choose from multiple overlay images for UHD (4k Ultra HD, with HDR, with HDR10+, with DV, With HDR and IMAX, with HDR10+ and IMAX and with DV and Imax)
+- Choose from multiple overlay images for BluRay (BluRay, with HDR, with HDR10+, with DV, With HDR and IMAX, with HDR10+ and IMAX and with DV and Imax)
 - Preview the combined result
 - Save the resulting image as a new file
 
@@ -25,7 +25,7 @@ Also DTheater Case was added. The overlays are tailored to fit the Emby Coverart
 
 ## Prerequisites
 
-- [.NET 6.0 Runtime](https://dotnet.microsoft.com/download/dotnet/6.0/runtime) is required to run the application. Please download and install the appropriate version for your operating system.
+- [.NET 8.0 Runtime](https://dotnet.microsoft.com/download/dotnet/8.0/runtime) is required to run the application. Please download and install the appropriate version for your operating system.
 
 ## Contributing
 
