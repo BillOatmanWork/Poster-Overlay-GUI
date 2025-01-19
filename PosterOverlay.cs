@@ -41,25 +41,25 @@ namespace PosterOverlay
         {
             cboOverlayImage = new ComboBox();
             cboOverlayImage.Items.AddRange(new object[] {
-                "4K with DV and IMAX",
-                "4K with DV",
-                "4K with HDR",
-                "4K with HDR and IMAX",
-                "4K with HDR10+",
-                "4K with HDR10+ and IMAX",
-                "4K with IMAX",
-                "4K",
-                "1080p with DV and IMAX",
-                "1080p with DV",
-                "1080p with HDR",
-                "1080p with HDR and IMAX",
-                "1080p with HDR10+",
-                "1080p with HDR10+ and IMAX",
-                "1080p with IMAX",
-                "1080p",
-                "DTheater",
-                "Bluray 3D",
-                "Bluray 3D with IMAX"
+                "UHDBD with DV and IMAX",
+                "UHDBD with DV",
+                "UHDBD with HDR",
+                "UHDBD with HDR and IMAX",
+                "UHDBD with HDR10+",
+                "UHDBD with HDR10+ and IMAX",
+                "UHDBD with IMAX",
+                "UHDBD",
+                "BD with DV and IMAX",
+                "BD with DV",
+                "BD with HDR",
+                "BD with HDR and IMAX",
+                "BD with HDR10+",
+                "BD with HDR10+ and IMAX",
+                "BD with IMAX",
+                "BD 3D",
+                "BD 3D with IMAX",
+                "BD",
+                "DTheater"
             });
             cboOverlayImage.Size = new Size(160, 23);
             cboOverlayImage.Location = new Point(193, 17);
@@ -205,61 +205,61 @@ namespace PosterOverlay
             switch (cboOverlayImage.SelectedIndex)
             {
                 case 0:
-                    overlayFilename = @"OverlayImages\4K with DV and Imax.png";
+                    overlayFilename = @"OverlayImages\UHDBD with DV and Imax.png";
                     break;
                 case 1:
-                    overlayFilename = @"OverlayImages\4K with DV.png";
+                    overlayFilename = @"OverlayImages\UHDBD with DV.png";
                     break;
                 case 2:
-                    overlayFilename = @"OverlayImages\4K with HDR.png";
+                    overlayFilename = @"OverlayImages\UHDBD with HDR.png";
                     break;
                 case 3:
-                    overlayFilename = @"OverlayImages\4K with HDR and Imax.png";
+                    overlayFilename = @"OverlayImages\UHDBD with HDR and Imax.png";
                     break;
                 case 4:
-                    overlayFilename = @"OverlayImages\4K with HDR10+.png";
+                    overlayFilename = @"OverlayImages\UHDBD with HDR10+.png";
                     break;
                 case 5:
-                    overlayFilename = @"OverlayImages\4K with HDR10+ and Imax.png";
+                    overlayFilename = @"OverlayImages\UHDBD with HDR10+ and Imax.png";
                     break;
                 case 6:
-                    overlayFilename = @"OverlayImages\4K with Imax.png";
+                    overlayFilename = @"OverlayImages\UHDBD with Imax.png";
                     break;
                 case 7:
-                    overlayFilename = @"OverlayImages\4K.png";
+                    overlayFilename = @"OverlayImages\UHDBD.png";
                     break;
                 case 8:
-                    overlayFilename = @"OverlayImages\1080p with DV and Imax.png";
+                    overlayFilename = @"OverlayImages\BD with DV and Imax.png";
                     break;
                 case 9:
-                    overlayFilename = @"OverlayImages\1080p with DV.png";
+                    overlayFilename = @"OverlayImages\BD with DV.png";
                     break;
                 case 10:
-                    overlayFilename = @"OverlayImages\1080p with HDR.png";
+                    overlayFilename = @"OverlayImages\BD with HDR.png";
                     break;
                 case 11:
-                    overlayFilename = @"OverlayImages\1080p with HDR and Imax.png";
+                    overlayFilename = @"OverlayImages\BD with HDR and Imax.png";
                     break;
                 case 12:
-                    overlayFilename = @"OverlayImages\1080p with HDR10+.png";
+                    overlayFilename = @"OverlayImages\BD with HDR10+.png";
                     break;
                 case 13:
-                    overlayFilename = @"OverlayImages\1080p with HDR10+ and Imax.png";
+                    overlayFilename = @"OverlayImages\BD with HDR10+ and Imax.png";
                     break;
                 case 14:
-                    overlayFilename = @"OverlayImages\1080p with Imax.png";
+                    overlayFilename = @"OverlayImages\BD with Imax.png";
                     break;
                 case 15:
-                    overlayFilename = @"OverlayImages\1080p.png";
+                    overlayFilename = @"OverlayImages\BD 3D.png";
                     break;
                 case 16:
-                    overlayFilename = @"OverlayImages\DTheater.png";
+                    overlayFilename = @"OverlayImages\BD 3D with IMAX.png";
                     break;
                 case 17:
-                    overlayFilename = @"OverlayImages\Bluray 3D.png";
+                    overlayFilename = @"OverlayImages\BD.png";
                     break;
                 case 18:
-                    overlayFilename = @"OverlayImages\Bluray 3D with IMAX.png";
+                    overlayFilename = @"OverlayImages\DTheater.png";
                     break;
             }
             ApplyOverlay(overlayFilename);
