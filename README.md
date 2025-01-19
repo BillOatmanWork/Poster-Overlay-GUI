@@ -25,7 +25,7 @@ Also DTheater Case was added. The overlays are tailored to fit the Emby Coverart
 
 ## Prerequisites
 
-- [.NET 6.0 Runtime](https://dotnet.microsoft.com/download/dotnet/6.0/runtime) is required to run the application. Please download and install the appropriate version for your operating system.
+- [.NET 8.0 Runtime](https://dotnet.microsoft.com/download/dotnet/8.0/runtime) is required to run the application. Please download and install the appropriate version for your operating system.
 
 ## Contributing
 
