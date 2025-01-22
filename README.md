@@ -9,10 +9,10 @@ Also DTheater Case was added. The overlays are tailored to fit the Emby Coverart
 
 ## Features
 
-- Choose from multiple overlay images for UHD (4k Ultra HD, with HDR, with HDR10+, with DV, With HDR and IMAX, with HDR10+ and IMAX and with DV and Imax)
-- Choose from multiple overlay images for BluRay (BluRay, with HDR, with HDR10+, with DV, With HDR and IMAX, with HDR10+ and IMAX and with DV and Imax)
+- Choose from multiple overlay images for UHD (UHDBD, with HDR, with HDR10+, with DV, With HDR and IMAX, with HDR10+ and IMAX and with DV and IMAX)
+- Choose from multiple overlay images for BluRay (BluRay, with HDR, with HDR10+, with DV, With HDR and IMAX, with HDR10+ and IMAX, with DV and IMAX, with 3D and with 3D with IMAX)
 - Preview the combined result
-- Save the resulting image as a new file
+- Save the resulting image as a new file or replace the old file
 
 ## How to Use
 
