@@ -78,10 +78,10 @@
 		<EmbeddedResource Include="OverlayImages\BD with Imax.png">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</EmbeddedResource>
-		<EmbeddedResource Include="OverlayImages\Bluray 3D with IMAX.png">
+		<EmbeddedResource Include="OverlayImages\BD 3D with IMAX.png">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</EmbeddedResource>
-		<EmbeddedResource Include="OverlayImages\Bluray 3D.png">
+		<EmbeddedResource Include="OverlayImages\BD 3D.png">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</EmbeddedResource>
 		<EmbeddedResource Include="OverlayImages\BD.png">
