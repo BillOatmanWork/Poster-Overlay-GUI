@@ -15,6 +15,29 @@ namespace PosterOverlay
         private object overlayImagePath;
         private string currentFileandPath;
 
+        public static List<string> overlayFilenames = new List<string>
+        {
+            "UHDBD with DV and IMAX",
+            "UHDBD with DV",
+            "UHDBD with HDR",
+            "UHDBD with HDR and IMAX",
+            "UHDBD with HDR10+",
+            "UHDBD with HDR10+ and IMAX",
+            "UHDBD with IMAX",
+            "UHDBD",
+            "BD with DV and IMAX",
+            "BD with DV",
+            "BD with HDR",
+            "BD with HDR and IMAX",
+            "BD with HDR10+",
+            "BD with HDR10+ and IMAX",
+            "BD with IMAX",
+            "BD 3D",
+            "BD 3D with IMAX",
+            "BD",
+            "DTheater"
+        };
+
         public PosterOverlay()
         {
             InitializeComponent();
@@ -30,6 +53,7 @@ namespace PosterOverlay
             CreateSaveAsImageButton();
             CreateSaveImageButton();
             CreateResetButton();
+            CreateAutoDetectButton();
         }
 
         private void SetFormAppearance()
@@ -40,27 +64,11 @@ namespace PosterOverlay
         private void CreateOverlayImageComboBox()
         {
             cboOverlayImage = new ComboBox();
-            cboOverlayImage.Items.AddRange(new object[] {
-                "UHDBD with DV and IMAX",
-                "UHDBD with DV",
-                "UHDBD with HDR",
-                "UHDBD with HDR and IMAX",
-                "UHDBD with HDR10+",
-                "UHDBD with HDR10+ and IMAX",
-                "UHDBD with IMAX",
-                "UHDBD",
-                "BD with DV and IMAX",
-                "BD with DV",
-                "BD with HDR",
-                "BD with HDR and IMAX",
-                "BD with HDR10+",
-                "BD with HDR10+ and IMAX",
-                "BD with IMAX",
-                "BD 3D",
-                "BD 3D with IMAX",
-                "BD",
-                "DTheater"
-            });
+            cboOverlayImage.Items.Clear();
+            foreach (var filename in overlayFilenames)
+            {
+                cboOverlayImage.Items.Add(filename);
+            }
             cboOverlayImage.Size = new Size(160, 23);
             cboOverlayImage.Location = new Point(193, 17);
             cboOverlayImage.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -140,7 +148,7 @@ namespace PosterOverlay
             {
                 Text = "Reset",
                 Size = cboOverlayImage.Size,
-                Location = new Point(190, 842),
+                Location = new Point(23, 842),
                 BackColor = Color.Red,
                 ForeColor = Color.White,
                 Font = new Font("Arial", 10, FontStyle.Regular),
@@ -148,6 +156,22 @@ namespace PosterOverlay
             };
             btnReset.Click += new EventHandler(btnReset_Click);
             Controls.Add(btnReset);
+        }
+
+        private void CreateAutoDetectButton()
+        {
+            Button btnAutoDetect = new Button
+            {
+                Text = "Auto Detect",
+                Size = cboOverlayImage.Size,
+                Location = new Point(195, 842),
+                BackColor = Color.LightGray,
+                ForeColor = Color.Black,
+                Font = new Font("Arial", 10, FontStyle.Regular),
+                FlatStyle = FlatStyle.Flat
+            };
+            btnAutoDetect.Click += new EventHandler(btnAutoDetect_Click);
+            Controls.Add(btnAutoDetect);
         }
 
         private void pbResultImage_Paint(object sender, PaintEventArgs e)
@@ -165,6 +189,21 @@ namespace PosterOverlay
             baseImage.Dispose();
         }
 
+        private void btnAutoDetect_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DetectionResult detectionResult = AutoDetect.AutoDetectProperties(currentFileandPath);
+
+                string suggestedOverlay = SelectBestFilename(detectionResult);
+                ApplyOverlay(suggestedOverlay);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
+        }
+
         private void btnBaseImage_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog
@@ -179,6 +218,64 @@ namespace PosterOverlay
                 //Ensure we save the current filename and path so we can do quick overwrites later
                 currentFileandPath = openFileDialog.FileName;
             }
+        }
+
+        public static string SelectBestFilename(DetectionResult result)
+        {
+            var priorityOrder = new List<Func<DetectionResult, bool>>
+            {
+                r => r.Is3D && r.IsIMAX,
+                r => r.Is3D,
+                r => r.IsDV && r.IsIMAX,
+                r => r.IsDV,
+                r => r.IsHDR && r.IsIMAX,
+                r => r.IsHDR,
+                r => r.IsHDR10Plus && r.IsIMAX,
+                r => r.IsHDR10Plus,
+                r => r.IsIMAX,
+                r => r.IsDolbyTheatre,
+                r => r.Resolution?.Contains("UHD") == true,
+                r => true
+            };
+
+            foreach (var condition in priorityOrder)
+            {
+                if (condition(result))
+                {
+                    return overlayFilenames.FirstOrDefault(f => MatchesCondition(f, result)) + ".png" ?? "BD.png";
+                }
+            }
+
+            return "BD.png";
+        }
+
+        private static bool MatchesCondition(string filename, DetectionResult result)
+        {
+            if (result.Is3D && filename.Contains("3D"))
+            {
+                if (result.IsIMAX && filename.Contains("IMAX")) return true;
+                if (!result.IsIMAX && !filename.Contains("IMAX")) return true;
+            }
+            if (result.IsDV && filename.Contains("DV"))
+            {
+                if (result.IsIMAX && filename.Contains("IMAX")) return true;
+                if (!result.IsIMAX && !filename.Contains("IMAX")) return true;
+            }
+            if (result.IsHDR && filename.Contains("HDR"))
+            {
+                if (result.IsIMAX && filename.Contains("IMAX")) return true;
+                if (!result.IsIMAX && !filename.Contains("IMAX")) return true;
+            }
+            if (result.IsHDR10Plus && filename.Contains("HDR10+"))
+            {
+                if (result.IsIMAX && filename.Contains("IMAX")) return true;
+                if (!result.IsIMAX && !filename.Contains("IMAX")) return true;
+            }
+            if (result.IsIMAX && filename.Contains("IMAX")) return true;
+            if (result.IsDolbyTheatre && filename.Contains("DTheater")) return true;
+            if (result.Resolution?.Contains("UHD") == true && filename.Contains("UHDBD")) return true;
+
+            return filename == "BD.png";
         }
 
         private void LoadBaseImage(string filenameAndPath)

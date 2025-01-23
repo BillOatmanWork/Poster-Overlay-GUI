@@ -19,13 +19,14 @@ Also DTheater Case was added. The overlays are tailored to fit the Emby Coverart
 1. Download and extract the latest Poster Overlay zip file.
 2. Run the PosterOverlay.exe file to launch the application.
 3. Click on the "Select Poster" button to choose the base image (poster).
-4. Use the dropdown box to select an overlay image.
+4. Use the dropdown box to select an overlay image, or press the "Auto Detect" button to automatically select the appropriate overlay.
 5. Preview the result in the main window.
 6. Click "Save Poster" to save the resulting image to your computer.
 
 ## Prerequisites
 
 - [.NET 8.0 Runtime](https://dotnet.microsoft.com/download/dotnet/8.0/runtime) is required to run the application. Please download and install the appropriate version for your operating system.
+- [ffprobe](https://ffmpeg.org/download.html) is required to use the Auto Detect feature. Please download ffmpeg and copy the ffprobe executable in the same directory as this application.
 
 ## Contributing
 
