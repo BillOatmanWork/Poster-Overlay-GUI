@@ -383,8 +383,26 @@ namespace PosterOverlay
             // Basisbild freigeben, um das Überschreiben zu ermöglichen
             baseImage.Dispose();
 
-            // Neues Bild im aktuellen Pfad speichern
-            resultBitmap.Save(currentFileandPath);
+            // Neues Bild im aktuellen Pfad und Ursprungsformat speichern
+            string extension = Path.GetExtension(currentFileandPath).ToLower();
+            ImageFormat imageFormat;
+
+            // Format basierend auf Dateierweiterung bestimmen
+            switch (extension)
+            {
+                case ".png":
+                    imageFormat = ImageFormat.Png;
+                    break;
+                case ".jpg":
+                case ".jpeg":
+                    imageFormat = ImageFormat.Jpeg;
+                    break;
+                default:
+                    MessageBox.Show("Unsupported file format.", "Error");
+                    return;
+            }
+
+            resultBitmap.Save(currentFileandPath, imageFormat);
 
             // Aktualisiertes Basisbild neu laden, falls es weiterverwendet werden soll
             LoadBaseImage(currentFileandPath);
