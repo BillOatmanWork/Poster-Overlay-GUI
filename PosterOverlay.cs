@@ -321,12 +321,15 @@ namespace PosterOverlay
             }
 
             Image overlayImage = Image.FromFile((string)overlayImagePath);
-            Bitmap resultBitmap = new Bitmap(pbResultImage.Width, pbResultImage.Height, PixelFormat.Format32bppArgb);
+            int targetWidth = 1000;
+            int targetHeight = 1500;
+
+            Bitmap resultBitmap = new Bitmap(targetWidth, targetHeight, PixelFormat.Format32bppArgb);
 
             using (Graphics g = Graphics.FromImage(resultBitmap))
             {
-                g.DrawImage(baseImage, 0, 0, pbResultImage.Width, pbResultImage.Height);
-                g.DrawImage(overlayImage, 0, 0, pbResultImage.Width, pbResultImage.Height);
+                g.DrawImage(baseImage, 0, 0, targetWidth, targetHeight);
+                g.DrawImage(overlayImage, 0, 0, targetWidth, targetHeight);
             }
 
             pbResultImage.Image = resultBitmap;
@@ -336,18 +339,20 @@ namespace PosterOverlay
                 Filter = "JPEG Image (*.jpg)|*.jpg|PNG Image (*.png)|*.png",
                 DefaultExt = "jpg" // Default extension
             };
+
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
-                //Clear the base image so overwriting it is possible
+                // Clear the base image to allow overwriting
                 baseImage.Dispose();
 
-                //Save the new image
+                // Save the new image in the desired size
                 resultBitmap.Save(saveFileDialog.FileName, ImageFormat.Jpeg);
 
-                //Reload the now updated base image so we can continue to work with it if needed
+                // Reload the now updated base image to continue working with it if needed
                 LoadBaseImage(saveFileDialog.FileName);
             }
         }
+
 
         private void btnSaveImage_Click(object sender, EventArgs e)
         {
@@ -358,23 +363,30 @@ namespace PosterOverlay
             }
 
             Image overlayImage = Image.FromFile((string)overlayImagePath);
-            Bitmap resultBitmap = new Bitmap(pbResultImage.Width, pbResultImage.Height, PixelFormat.Format32bppArgb);
+
+            // Zielgröße für das Bild festlegen
+            int targetWidth = 1000;
+            int targetHeight = 1500;
+
+            // Erstellen eines neuen Bitmaps mit der Zielgröße
+            Bitmap resultBitmap = new Bitmap(targetWidth, targetHeight, PixelFormat.Format32bppArgb);
 
             using (Graphics g = Graphics.FromImage(resultBitmap))
             {
-                g.DrawImage(baseImage, 0, 0, pbResultImage.Width, pbResultImage.Height);
-                g.DrawImage(overlayImage, 0, 0, pbResultImage.Width, pbResultImage.Height);
+                // Basisbild und Overlay-Bild skalieren und zeichnen
+                g.DrawImage(baseImage, 0, 0, targetWidth, targetHeight);
+                g.DrawImage(overlayImage, 0, 0, targetWidth, targetHeight);
             }
 
             pbResultImage.Image = resultBitmap;
 
-            //Clear the base image so overwriting it is possible
+            // Basisbild freigeben, um das Überschreiben zu ermöglichen
             baseImage.Dispose();
 
-            //Save the new image by overwriting the old image directly
+            // Neues Bild im aktuellen Pfad speichern
             resultBitmap.Save(currentFileandPath);
 
-            //Reload the now updated base image so we can continue to work with it if needed
+            // Aktualisiertes Basisbild neu laden, falls es weiterverwendet werden soll
             LoadBaseImage(currentFileandPath);
         }
         private void PosterOverlay_Load(object sender, EventArgs e)
