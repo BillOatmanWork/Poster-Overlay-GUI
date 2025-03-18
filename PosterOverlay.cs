@@ -206,13 +206,6 @@ namespace PosterOverlay
         {
             string overlayFilename = "";
 
-            /*
-             "UHDBD with HDR and Atmos",
-                "UHDBD with DV and Atmos",
-                "UHDBD with HDR and DTS",
-                "UHDBD with DV and DTS",
-             * */
-
             switch (cboOverlayImage.SelectedIndex)
             {
                 case 0:
