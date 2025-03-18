@@ -11,6 +11,10 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+    <None Remove="OverlayImages\UHDBD with HDR and Atmos.png" />
+    <None Remove="OverlayImages\UHDBD with DV and Atmos.png" />
+    <None Remove="OverlayImages\UHDBD with HDR and DTS.png" />
+    <None Remove="OverlayImages\UHDBD with DV and DTS.png" />  
 		<None Remove="OverlayImages\UHDBD.png" />
 		<None Remove="OverlayImages\UHDBD with DV and Imax.png" />
 		<None Remove="OverlayImages\UHDBD with DV.png" />
